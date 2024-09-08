@@ -1,0 +1,65 @@
+.menuBar
+	{
+		background-color: #D6D3CE;	
+		cursor: pointer;
+		color: black;
+		padding: 1px 3px 1px 3px;
+		border-style: solid;
+		border-color: #D6D3CE;
+		border-width: 1;
+	}
+	.menuBarOnMouseOver
+	{	
+		background-color: #D6D3CE;	
+		cursor: pointer;
+		color: black;
+		padding: 1px 3px 1px 3px;
+		border-style: outset;
+		border-width: 1;
+		border-color: white;
+	}
+	.menuBarOnSelect
+	{
+		background-color: #D6D3CE;	
+		cursor: pointer;
+		color: black;
+		padding: 1px 3px 1px 3px;
+		border-style: inset;
+		border-width: 1;
+		border-color: white;
+	}
+	.menuItem
+	{
+		background-color: #D6D3CE;	
+		cursor: pointer;
+		color: black;
+		padding: 1px 3px 1px 3px;
+	}
+	.menuItemOnSelect
+	{
+		background-color: #000099;	
+		cursor: pointer;
+		color: white;
+		padding: 1px 3px 1px 3px;
+	}
+	
+	.menuBarContainer
+	{
+		background-color: #D6D3CE;	
+		cursor: pointer;
+		border-style: outset;
+		border-width: 1;
+		font-family: "Tahoma";
+		font-size: 11px;
+		padding: 2px 2px 2px 2px;
+	}
+	.menuItemContainer
+	{
+		background-color: #D6D3CE;	
+		cursor: pointer;
+		border-style: outset;
+		border-width: 2;
+		font-family: "Tahoma";
+		font-size: 11px;
+		padding: 2px 2px 2px 2px;
+	}

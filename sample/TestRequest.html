@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Debug Messages</title>
+
+<style>
+
+	.testStyle{
+
+
+		border-width: 2;
+		background-color: #0000FF;
+	}
+</style>
+
+<script TYPE="text/javascript">
+
+	function t(){
+		d
+		var xmlHttp;
+		try {	// Firefox, Opera 8.0+, Safari
+				xmlHttp=new XMLHttpRequest();
+		}
+		catch (e) {    // Internet Explorer
+				try {
+					xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+				}
+				catch (e){
+					try {
+						xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+					}
+					catch (e) {
+						alert("Your browser does not support AJAX!");
+						return false;
+					}
+				}
+		}
+		xmlHttp.onreadystatechange=function()  {
+				alert(xmlHttp.readyState);
+				//alert(xmlHttp.status);
+		}
+
+		xmlHttp.open("POST","http://www.datamblogs.com/datamblogw",true);
+		xmlHttp.send(null);
+
+	}
+
+</script>
+</head>
+<body onload='t()' >
+<table border='0' height='15px'>
+	<tr>
+		<td id='dateField' height='15px'>
+
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+

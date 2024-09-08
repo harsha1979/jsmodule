@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Debug Messages</title>
+<link href="http://amila/jsmodule/images/jsui/component/MaskDateField.css" rel="stylesheet" type="text/css"/>
+<link href="http://amila/jsmodule/images/datechooser/DateChooser.css" rel="stylesheet" type="text/css"/>
+
+<SCRIPT TYPE="text/javascript" SRC="http://amila/jsmodule/lk/wts/wts.js"> </script>
+<script TYPE="text/javascript">
+	//document.open();
+	wts.baseURL("http://amila/jsmodule/");
+	wts.debugMode(true);
+	wts.using("lk.wts.util.*;");
+	wts.using("lk.wts.lang.String;");
+	wts.using("lk.wts.jsui.component.MaskDateField;");
+	wts.using("lk.wts.jsui.datechooser.DateChooser;");	
+	//wts.using("lk.wts.jsui.component.FormatSpec;");
+	//wts.using("lk.wts.util.DateUtil;");
+	//wts.using("lk.wts.util.SimpleDateFormat;");
+	var todayValue="16/Jul/2008";
+	function test(){
+			
+			var sdf=new SimpleDateFormat("dd/MMM/yyyy HH:mm");
+			var s=sdf.format(new Date());			
+			var k=sdf.parse("15/May/2008 14:50");
+			
+	}
+
+	function t(){
+			var checkindate=document.getElementById("checkindate");
+			
+			
+			var dateField=document.getElementById("dateField");
+			var maskField=new MaskDateField(2,3,4,"dmy");
+			var field=maskField.getField();
+			dateField.appendChild(field);
+			var dc=new DateChooser(maskField);
+	}
+
+	
+</script>
+</head>
+<body onload='t()' >
+<input type="button" value="click" onclick="test()"/>
+<input type="text" name='checkindate' id='checkindate' />
+<button value="ffff" name="ggg" title="ttt" >dfdfds</button>
+<table border='0' height='15px'>
+	<tr>
+		<td id='dateField' height='15px'>
+		
+		</td>
+	</tr>
+</table>
+</body>
+</html>

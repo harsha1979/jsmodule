@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+<script type="text/javascript" src='http://harsha/jsmodule/lk/wts/lang/Object.js'></script>
+
+<script type="text/javascript">
+
+	function testOnLoad(){
+		var x = new HashMap();
+		var dd = document.getElementById('id_holder');
+		
+		//wts.attachedEventCBrowser(dd,"onclick",menuOnClick);
+		dd.onclick = menuOnClick ;
+		
+		//Event.constructor =test2;
+		/*alert(Event.prototype.constructor);
+		Event.prototype.constructor = MyEvent ;
+		alert(Event.prototype.constructor);
+		dd.onclick = menuOnClick;*/
+		//dd.onclick.xx = test2 ;
+		
+		//Event.prototype.srcElement = "harsha2" ;
+		/*for(var x in Event){
+			document.writeln(x + " = "+ Event[x] + "</br>");
+		}*/
+
+	}
+	
+	function menuOnClick(){
+		//event.initEvent(event.target);
+		//alert(event.srcElement.tagName);
+		
+		d
+		//Event.prototype.srcElement = "harsha" ;
+		//event = test(event);
+		//var ev = menuOnClick.arguments[0];
+		//var x = event.srcElement;
+		alert("x");
+	}
+	
+	/*function test(event){
+
+		if(!event){
+			event = window.event ;
+		}else{
+			event.srcElement = event.target ;
+		}
+		return event ;
+	}
+	function test2(){
+		alert("test");
+	}
+	function Object(){
+		
+		alert(this);
+		Event.prototype.sss = this.target;
+		alert("test");
+	}*/
+	
+	
+</script>
+</head>
+<body onload="testOnLoad();" >
+<div id='id_holder' style="width: 100px;height: 100px;background-color: black"></div>
+
+</body>
+</html>

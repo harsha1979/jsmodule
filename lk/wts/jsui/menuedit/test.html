@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link href="http://harsha/jsmodule/css/jsdataview.css" rel="stylesheet" type="text/css" />
+<script type='text/javascript' src='http://harsha/jsmodule/lk/wts/wts.js'> </script>
+<script type='text/javascript'>
+	wts.debugMode(true);
+	wts.using("lk.wts.comm.*;");
+	wts.using("lk.wts.util.*;");
+	wts.using("lk.wts.jsui.menuedit.JSMenuBuilder;");
+
+	wts.using("lk.wts.ajax.*;");
+</script>
+
+<style>
+	.menuBar
+	{
+		background-color: #D6D3CE;
+		cursor: pointer;
+		color: black;
+		padding: 1px 3px 1px 3px;
+		border-style: solid;
+		border-color: #D6D3CE;
+		border-width: 1;
+	}
+	.menuBarOnMouseOver
+	{
+		background-color: #D6D3CE;
+		cursor: pointer;
+		color: black;
+		padding: 1px 3px 1px 3px;
+		border-style: outset;
+		border-width: 1;
+		border-color: white;
+	}
+	.menuBarOnSelect
+	{
+		background-color: #D6D3CE;
+		cursor: pointer;
+		color: black;
+		padding: 1px 3px 1px 3px;
+		border-style: inset;
+		border-width: 1;
+		border-color: white;
+	}
+	.menuItem
+	{
+		background-color: #D6D3CE;
+		cursor: pointer;
+		color: black;
+		padding: 1px 3px 1px 3px;
+	}
+
+	.menuItemDeny
+	{
+		background-color: #D6D3CE;
+		cursor: crosshair;
+		color: threedshadow;
+		padding: 1px 3px 1px 3px;
+	}
+
+
+	.menuItemOnSelect
+	{
+		background-color: #000099;
+		cursor: pointer;
+		color: white;
+		padding: 1px 3px 1px 3px;
+	}
+
+	.menuBarContainer
+	{
+		background-color: #D6D3CE;
+		cursor: pointer;
+		border-style: outset;
+		border-width: 1;
+		font-family: "Times New Roman", Times, serif;
+		font-size: 12px;
+		padding: 2px 2px 2px 2px;
+	}
+	.menuItemContainer
+	{
+		background-color: #D6D3CE;
+		cursor: pointer;
+		border-style: outset;
+		border-width: 2;
+		font-family: "Times New Roman", Times, serif;
+		font-size: 12px;
+		padding: 2px 2px 2px 2px;
+	}
+
+</style>
+<script type="text/javascript">
+	var menuBar = null ;
+	function testOnLoad(){
+		/*wts.debug("debug");
+		wts.info("info");
+		wts.error("error");
+		wts.warning("warning");*/
+
+		//Event.prototype.srcElement = property[this];
+
+		var str ='<?xml version="1.0" encoding="UTF-8"?>';
+		str+='<MenuBar>';
+		str+='	<Menu name="Login" level="allow">';
+		str+='		<MenuItem name="User tLogin" id="UserLogin2" level="allow" />';
+		str+='		<MenuItem name="Log Oftf" id="LogOff3" level="allow" />';
+		str+='		<Menu name="Descdfdd" level="deny">';
+		str+='			<MenuItem name="Des4c111" id="De3sc11" level="deny" />';
+		str+='			<MenuItem name="3Help22 Desc" id="4HelpDesc1" level="allow" />';
+		str+='			<MenuItem name="Des5c133" id="Desc152" level="allow" />';
+		str+='			<MenuItem name="He6l44 Desc" id="6HelpDesc2" level="allow" />';
+		str+='			<MenuItem name="De7l565p Desc" id="8HelpDesc3" level="deny" />';
+		str+='			<MenuItem name="D8esc6761" id="Desc194" level="allow" />';
+		str+='			<MenuItem name="Helup787 Desc" id="0HelpDesc4" level="allow" />';
+		str+='			<MenuItem name="787u87" id="Desc715" level="allow" />';
+		str+='			<MenuItem name="Hel7i87p Desc" id="He77lpDesc5" level="allow" />';
+		str+='		</Menu>';
+		str+='		<MenuItem name="User yLogin" id="User4Login" level="allow" />';
+		str+='		<MenuItem name="Log uOff" id="LogOf5f" level="allow" />';
+		str+='		<MenuItem name="Useir Login" id="Us6erLogin" level="deny" />';
+		str+='		<MenuItem name="menu_sp" id="menu_sp" level="allow" />';
+		str+='		<MenuItem name="Usper Login" id="8UserLogin" level="allow" />';
+		str+='		<MenuItem name="Log[ Off" id="LogO9ff" level="allow" />';
+		str+='		<Menu name="Desc" level="deny">';
+		str+='			<MenuItem name="Desc111" id="Desc11" level="allow" />';
+		str+='			<MenuItem name="Help22 Desc" id="HelpDesc1" level="allow" />';
+		str+='			<MenuItem name="Desc133" id="Desc12" level="allow" />';
+		str+='			<MenuItem name="Hel44 Desc" id="HelpDesc2" level="allow" />';
+		str+='			<MenuItem name="Desc54541" id="Desc13" level="allow" />';
+		str+='			<MenuItem name="Hel565p Desc" id="HelpDesc3" level="allow" />';
+		str+='			<MenuItem name="Desc6761" id="Desc14" level="allow" />';
+		str+='			<MenuItem name="Help787 Desc" id="HelpDesc4" level="allow" />';
+		str+='			<MenuItem name="78787" id="Desc15" level="allow" />';
+		str+='			<MenuItem name="Hel787p Desc" id="HelpDesc5" level="allow" />';
+		str+='		</Menu>';
+		str+='	</Menu>		';
+		str+='	<Menu name="Maintenance" level="allow">';
+		str+='		<MenuItem name="Users Maintenance" id="Users" level="allow" />';
+		str+='		<MenuItem name="Branches Maintenance" id="Branches" level="allow" />';
+		str+='		<MenuItem name="Currencies Maintenance" id="Currencies" level="allow" />';
+		str+='			<Menu name="HelpsHelpsHelpsHelpsHelpsHelps">';
+		str+='				<MenuItem name="Aboudt" id="Abofdgut" level="allow" />';
+		str+='				<MenuItem name="Helfp Topics" id="Hhedfdlp" level="allow" />		';
+		str+='				<MenuItem name="Abfoudt" id="Abohhgut" level="allow" />';
+		str+='				<MenuItem name="Helgfp Topics" id="Hhfdelp" level="allow" />		';
+		str+='					<Menu name="Helpsdsdsds" level="allow">';
+		str+='						<MenuItem name="Abosdsdsut" id="Absdsdout" level="allow" />';
+		str+='						<MenuItem name="Hesdsdlp Topics" id="Hsdsdelp" level="allow" />		';
+		str+='					</Menu>';
+		str+='				<MenuItem name="Abhoudt" id="Abogufdt" level="allow" />';
+		str+='				<MenuItem name="Heflfp Topics" id="Hdhelp" level="allow" />		';
+		str+='			</Menu>';
+		str+='		<MenuItem name="Periods Maintenance" id="Periods" level="allow" />';
+		str+='		<MenuItem name="Nominal Accounts Maintenance" id="NominalAccounts" level="allow" />';
+		str+='	</Menu>';
+		str+='	<Menu name="Help" level="allow">';
+		str+='		<MenuItem name="About" id="About" level="allow" />';
+		str+='		<MenuItem name="Help Topics" id="Help" level="allow" />		';
+		str+='	</Menu>';
+		str+='</MenuBar>';
+		
+		str="<MenuBar>";
+		str+="	<Menu name='Login' level='deny'>";
+		str+="		<MenuItem name='User tLogin' id='UserLogin2' level='allow' />";
+		str+="		<MenuItem name='Log Oftf' id='LogOff3' level='allow' />";
+		str+="		<Menu name='Descdfdd' level='deny'>";
+		str+="			<MenuItem name='Des4c111' id='De3sc11' level='deny' />";
+		str+="			<MenuItem name='3Help22 Desc' id='4HelpDesc1' level='allow' />";
+		str+="			<MenuItem name='Des5c133' id='Desc152' level='allow' />";
+		str+="			<MenuItem name='He6l44 Desc' id='6HelpDesc2' level='allow' />";
+		str+="			<MenuItem name='De7l565p Desc' id='8HelpDesc3' level='deny' />";
+		str+="			<MenuItem name='D8esc6761' id='Desc194' level='allow' />";
+		str+="			<MenuItem name='Helup787 Desc' id='0HelpDesc4'";
+		str+="				level='allow' />";
+		str+="			<MenuItem name='787u87' id='Desc715' level='allow' />";
+		str+="			<MenuItem name='Hel7i87p Desc' id='He77lpDesc5'";
+		str+="				level='allow' />";
+		str+="		</Menu>";
+		str+="		<MenuItem name='User yLogin' id='User4Login' level='allow' />";
+		str+="		<MenuItem name='Log uOff' id='LogOf5f' level='allow' />";
+		str+="		<MenuItem name='Useir Login' id='Us6erLogin' level='deny' />";
+		str+="		<MenuItem name='menu_sp' id='menu_sp' level='allow' />";
+		str+="		<MenuItem name='Usper Login' id='8UserLogin' level='allow' />";
+		str+="		<MenuItem name='Log[ Off' id='LogO9ff' level='allow' />";
+		str+="		<Menu name='Desc' level='deny'>";
+		str+="			<MenuItem name='Desc111' id='Desc11' level='allow' />";
+		str+="			<MenuItem name='Help22 Desc' id='HelpDesc1' level='allow' />";
+		str+="			<MenuItem name='Desc133' id='Desc12' level='allow' />";
+		str+="			<MenuItem name='Hel44 Desc' id='HelpDesc2' level='allow' />";
+		str+="			<MenuItem name='Desc54541' id='Desc13' level='allow' />";
+		str+="			<MenuItem name='Hel565p Desc' id='HelpDesc3' level='allow' />";
+		str+="			<MenuItem name='Desc6761' id='Desc14' level='allow' />";
+		str+="			<MenuItem name='Help787 Desc' id='HelpDesc4' level='allow' />";
+		str+="			<MenuItem name='78787' id='Desc15' level='allow' />";
+		str+="			<MenuItem name='Hel787p Desc' id='HelpDesc5' level='allow' />";
+		str+="		</Menu>";
+		str+="	</Menu>";
+		str+="	<Menu name='Maintenance' level='allow'>";
+		str+="		<MenuItem name='Users Maintenance' id='Users' level='allow' />";
+		str+="		<MenuItem name='Branches Maintenance' id='Branches'";
+		str+="			level='allow' />";
+		str+="		<MenuItem name='Currencies Maintenance' id='Currencies'";
+		str+="			level='allow' />";
+		str+="		<Menu name='HelpsHelpsHelpsHelpsHelpsHelps' level='deny'>";
+		str+="			<MenuItem name='Aboudt' id='Abofdgut' level='allow' />";
+		str+="			<MenuItem name='Helfp Topics' id='Hhedfdlp' level='allow' />";
+		str+="			<MenuItem name='Abfoudt' id='Abohhgut' level='allow' />";
+		str+="			<MenuItem name='Helgfp Topics' id='Hhfdelp' level='allow' />";
+		str+="			<Menu name='Helpsdsdsds' level='allow'>";
+		str+="				<MenuItem name='Abosdsdsut' id='Absdsdout'";
+		str+="					level='allow' />";
+		str+="				<MenuItem name='Hesdsdlp Topics' id='Hsdsdelp'";
+		str+="					level='allow' />";
+		str+="			</Menu>";
+		str+="			<MenuItem name='Abhoudt' id='Abogufdt' level='allow' />";
+		str+="			<MenuItem name='Heflfp Topics' id='Hdhelp' level='allow' />";
+		str+="		</Menu>";
+		str+="		<MenuItem name='Periods Maintenance' id='Periods' level='allow' />";
+		str+="		<MenuItem name='Nominal Accounts Maintenance'";
+		str+="			id='NominalAccounts' level='allow' />";
+		str+="	</Menu>";
+		str+="	<Menu name='Help' level='deny'>";
+		str+="		<MenuItem name='About' id='About' level='allow' />";
+		str+="		<MenuItem name='Help Topics' id='Help' level='allow' />";
+		str+="	</Menu>";
+		str+="</MenuBar>";
+		
+
+		d
+		menuBar = JSMenuBuilder.buildMenuBar(str,true);
+
+		var d = document.getElementById('id_holder');
+
+
+
+		JSMenuBar.clickEventOnMenuItem = menuOnClick ;
+
+		menuBar.loadMenuBar(d);
+
+
+	}
+
+	function menuOnClick(item){
+		wts.debug(item.getID());
+		//onload="testOnLoad();"
+	}
+	function saveXML(){
+		alert(JSMenuBuilder.getMenuXML(menuBar)); 
+	}
+</script>
+</head>
+<body onload="testOnLoad();" bgcolor="black">
+<div id='id_holder' style="width: 900px"></div>
+<select>
+	<option>test Code</option>
+	<option>test Code</option>
+	<option>test Code</option>
+	<option>test Code</option>
+	<option>test Code</option>
+</select>
+<input type="button" value="Save" onclick="saveXML();">
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+document.write("<script  type='text/javascript'  src='"+baseURL+"/lk/wts/ajax/Param.js'> </script>");
+document.write("<script  type='text/javascript'  src='"+baseURL+"/lk/wts/ajax/AJAXController.js'> </script>");

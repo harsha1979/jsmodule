@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<script type="text/javascript" src="Event.js"></script>
+<script type="text/javascript">
+	//var x = 10 ;
+	//var y = 'eval("x*5")';
+
+	function testOnLoad(){
+		/*for(var x in Event){
+			alert(x);
+		}*/
+		//alert(MyEvent.ha);
+		//Event.prototype.constructor = MyEvent;
+		//var event = new Event();
+		//var stateCaps = new ActiveXObject("Scripting.Dictionary");
+		var id_holder = document.getElementById('id_holder');
+		id_holder.onclick = menuOnClick;
+		/*id_holder.onclick.arguments = event;
+		id_holder.onclick.event = event;*/
+		//id_holder.fireEvent("onclick");
+		//event.attachEvent(id_holder,"onclick","menuOnClick");
+		
+	}
+	function Object(){
+		alert(Event.prototype.aconstructor);
+		Event.prototype.aconstructor.call();
+	}
+	function menuOnClick(evt){
+		/*for(var x in Event){
+			alert(x);
+		}*/
+		//x=100;
+		
+		
+		
+		
+		//alert("y");
+		var pp = document.createElement("P");
+		pp.innerHTML="TestCode";
+		pp.style.width = '100px';
+		pp.style.backgroundColor = "red";
+		
+	
+		document.body.appendChild(pp);
+		
+	}
+</script>
+</head>
+<body onload="testOnLoad();">
+<div id='id_holder' style="width: 500px;height: 200px;border-style: solid;border-color: black"></div>
+
+
+
+</body>
+</html>

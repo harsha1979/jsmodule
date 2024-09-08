@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link href="http://harsha/jsmodule/css/jsdataview.css" rel="stylesheet" type="text/css" />
+<script type='text/javascript' src='http://harsha/jsmodule/lk/wts/wts.js'> </script>
+<script type='text/javascript'>
+	wts.debugMode(true);
+	wts.using("lk.wts.jsui.tab.JSTabbedPane;");
+	
+
+</script>
+
+<style>
+.container
+{
+	background-color: gray;
+	
+	border-bottom-width: 1 ;
+	border-bottom-style: groove;
+	border-bottom-color: black;
+	
+	border-left-width: 1 ;
+	border-left-style: groove;
+	border-left-color: black;
+	
+	border-right-width: 1 ;
+	border-right-style: groove;
+	border-right-color: black;
+	cursor: default;
+}
+.controller
+{
+	background-color: buttonface;
+}
+
+.normalLabel
+{
+	background-color: buttonface;
+	border-width: 1 ;
+	border-style: groove;
+	border-color: black;
+	cursor: default;
+}
+
+.selectedLabel
+{
+	background-color: gray;
+	
+	border-top-width: 1 ;
+	border-top-style: groove;
+	border-top-color: black;
+	
+	border-left-width: 1 ;
+	border-left-style: groove;
+	border-left-color: black;
+	
+	border-right-width: 1 ;
+	border-right-style: groove;
+	border-right-color: black;
+	cursor: default;
+	
+}
+
+</style>
+<script type="text/javascript">
+	function testOnLoad(){
+		f
+		var d = document.getElementById('id_holder');
+		var tab = new JSTabbedPane();
+		var p1 = new JSPanel("PanelL1","<h1>Panel1</h1>");
+		var p2 = new JSPanel("PanelL2","<h1>Panel2</h1>");
+		var p3 = new JSPanel("PanelL3","<h1>Panel3</h1>");
+		var p4 = new JSPanel("PanelL4","<h1>Panel4</h1>");
+		var p5 = new JSPanel("PanelL5","<h1>Panel5</h1>");
+		var p6 = new JSPanel("PanelL6","<h1>Panel6</h1>");
+		var p7 = new JSPanel("PanelL7","<h1>Panel7</h1>");
+		var p8 = new JSPanel("PanelL8","<h1>Panel8</h1>");
+		var p9 = new JSPanel("PanelL9","<h1>Panel9</h1>");
+		var p10 = new JSPanel("PanelL10","<h1>Panel10</h1>");
+		
+		
+		tab.addPanel(p1);
+		tab.addPanel(p2);
+		tab.addPanel(p3);
+		tab.addPanel(p4);
+		tab.addPanel(p5);
+		tab.addPanel(p6);
+		tab.addPanel(p7);
+		tab.addPanel(p8);
+		tab.addPanel(p9);
+		tab.addPanel(p10);
+		
+		tab.loadTabbedPane(d);
+		
+	}
+
+</script>
+</head>
+<body onload="testOnLoad();">
+<div id='id_holder'></div>
+
+
+
+</body>
+</html>
+
+

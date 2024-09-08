@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>Debug Messages</title>
+<script type="text/javascript">
+	var obj = null ;
+	function debugLoad(){
+		obj = dialogArguments.wts.obj;
+		obj.isOpened = true;
+		obj.debug = debug ;
+		obj.info = info ;
+		obj.error = error;
+		obj.warning= warning;
+	}
+	function debug(){
+		var table = document.getElementById('debug_table');
+		var row = table.insertRow();
+		row.style.color = '#000000';
+		if(row.rowIndex%2==1){
+			row.style.backgroundColor='#666666';
+		}else{
+			row.style.backgroundColor='#CCCCCC';
+		}
+		var cell = row.insertCell();
+		cell.innerText=row.rowIndex;
+		cell = row.insertCell();
+		cell.innerText=obj.message;
+		cell.scrollIntoView(true);
+	}
+	function info(){
+		var table = document.getElementById('debug_table');
+		var row = table.insertRow();
+		row.style.color = '#0000FF';
+		if(row.rowIndex%2==1){
+			row.style.backgroundColor='#666666';
+		}else{
+			row.style.backgroundColor='#CCCCCC';
+		}
+		var cell = row.insertCell();
+		cell.innerText=row.rowIndex;
+		cell = row.insertCell();
+		cell.innerText=obj.message;
+		cell.scrollIntoView(true);
+	}
+	function error(){
+		var table = document.getElementById('debug_table');
+		var row = table.insertRow();
+		row.style.color = '#FF0000';
+		if(row.rowIndex%2==1){
+			row.style.backgroundColor='#666666';
+		}else{
+			row.style.backgroundColor='#CCCCCC';
+		}
+		var cell = row.insertCell();
+		cell.innerText=row.rowIndex;
+		cell = row.insertCell();
+		cell.innerText=obj.message;
+		cell.scrollIntoView(true);
+	}
+	function warning(){
+		var table = document.getElementById('debug_table');
+		var row = table.insertRow();
+		row.style.color = '#FFCC00';
+		if(row.rowIndex%2==1){
+			row.style.backgroundColor='#666666';
+		}else{
+			row.style.backgroundColor='#CCCCCC';
+		}
+		var cell = row.insertCell();
+		cell.innerText=row.rowIndex;
+		cell = row.insertCell();
+		cell.innerText=obj.message;
+		cell.scrollIntoView(true);
+	}
+	function debugBeforeUnload(){
+		window.event.returnValue = false;
+		
+	}
+	function debugUnload(){
+		if(obj && obj.isOpened){
+			obj.isOpened = false;		
+		}
+	}
+	function clearContent(){
+		var td = document.getElementById('container');
+		td.innerHTML = '<table id="debug_table" width="100%"></table>';
+	}
+</script>
+</head>
+<body onload="debugLoad();"  onunload="debugUnload();">
+<table width="100%" border="1">
+	<tr>
+		 <td colspan="2" bordercolor="#FFFFFF" bgcolor="#333333"><font color="#FFFFFF">Debug Message</font></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<div style="overflow: auto;height: 195px;width: 100%">
+		<table width="100%">
+			<tr>
+				<td id='container'>
+					<table id='debug_table' width="100%">
+					</table>
+				</td>
+			</tr>
+		</table>
+		</div>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#999999">End</td>
+		<td bgcolor="#999999"><input type="button" value="clear" onclick="clearContent();"></td>
+	</tr>
+</table>
+
+</body>
+</html>

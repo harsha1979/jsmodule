@@ -1,0 +1,51 @@
+
+<html>
+<head>
+<SCRIPT TYPE="text/javascript" SRC="http://amila/jsmodule/lk/wts/wts.js"> </script>
+
+<script TYPE="text/javascript">
+	//document.open();
+	wts.baseURL("http://amila/jsmodule/");
+	wts.debugMode(true);	
+	
+	function test(){
+		wts.debug(cdcat.XMLDocument.xml);
+		var str="";
+		str+="<Hotels>";
+		str+="	<Hotel>";
+		str+="		<HotelName>Amila</HotelName>";		
+		str+="	</Hotel>";
+		str+="	<Hotel>";
+		str+="		<HotelName>Harsha</HotelName>";		
+		str+="	</Hotel>";
+		str+="</Hotels>";
+		
+		
+		cdcat.XMLDocument.loadXML(str);
+	}
+</script>
+
+</head>
+<body>
+<input type="button" value="click" onclick="test()"/>
+<xml id="cdcat" >
+	<Hotels>
+		<Hotel>
+			<HotelName>Test Hotel</HotelName>		
+		</Hotel>
+		<Hotel>
+			<HotelName>Test Hotel2</HotelName>		
+		</Hotel>
+	</Hotels>
+</xml>
+
+<table border="1" datasrc="#cdcat">
+<tr>
+<td><span datafld="HotelName"></span></td>
+</tr>
+</table>
+
+</body>
+</html>
+
+

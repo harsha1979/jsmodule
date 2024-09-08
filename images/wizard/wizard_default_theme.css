@@ -1,0 +1,54 @@
+
+.container{
+	background-color: #D5D0C8;
+	
+}
+
+.flowPanel{
+	background-color: #D5D0C8;
+	
+}
+
+.wizardElementPanel{
+	
+	background-color: #D5D0C8;
+	
+}
+.buttonPanel{
+	background-color: #D5D0C8;
+}
+.flowPanelTable{
+	
+}
+.flowPanelElementName{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+.flowPanelElementHeadName{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.buttonPanelButtonTable{
+	border-left:ridge #D5D0C8 1px;
+	border-right:ridge #D5D0C8 2px;
+	border-bottom:ridge #D5D0C8 2px;
+	border-top:ridge #D5D0C8 1px;
+}
+
+.buttonPanelButton{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;	
+	height:20px;
+	cursor :default;
+	
+}
+.buttonPanelButtonDisabled{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;	
+	height:20px;
+	color: #FFFFFF;
+	font-weight: bold;	
+	cursor :default;	
+}

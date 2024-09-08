@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Debug Messages</title>
+
+<style>
+
+	.testStyle{
+		
+		
+		border-width: 2;
+		background-color: #0000FF;
+	}
+</style>
+<SCRIPT TYPE="text/javascript" SRC="http://amila/jsmodule/lk/wts/wts.js"> </script>
+<SCRIPT TYPE="text/javascript" SRC="http://amila/jsmodule/sample/Item.js"> </script>
+<script TYPE="text/javascript">
+	//document.open();
+
+	//wts.debugMode(true);
+	wts.using("lk.wts.util.*;");
+	wts.using("lk.wts.jsui.gridview.GridView;");
+	//wts.using("lk.wts.jsui.component.FormatSpec;");
+	//wts.using("lk.wts.util.DateUtil;");
+	//wts.using("lk.wts.util.SimpleDateFormat;");
+
+	function d(){
+		alert(event.keyCode);
+		var objectParent=event.srcElement.objectParent;
+		if(event.keyCode==38){
+			if(objectParent.getSelectedRow()==-1){
+				
+			}
+		}
+	}
+	function t(){
+		var dateField=document.getElementById("dateField");
+		var hset=new HashSet();
+		var cols=new Array("ItemCode","ItemDesc");
+		var dis=new Array("Item Code","Item Desc");
+		var item1=new Item();
+		item1.setItemCode("I001");
+		item1.setItemDesc("Item number 1");
+		hset.add(item1);
+
+		var item2=new Item();
+		item2.setItemCode("I002");
+		item2.setItemDesc("Item number 2");
+		hset.add(item2);
+
+
+		var gv=new GridView(hset,cols,dis);
+		var g=gv.getGridView();
+		g.tabIndex=1;
+		g.onkeyup=d;
+		dateField.appendChild(g);
+
+	}
+
+</script>
+</head>
+<body onload='t()' >
+<table border='0' height='15px'>
+	<tr>
+		<td id='dateField' height='15px'>
+
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+

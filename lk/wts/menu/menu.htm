@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<SCRIPT TYPE="text/javascript"
+	SRC="http://harsha/jsmodule/lk/wts/menu/TestMenu.js">
+</SCRIPT>
+<SCRIPT TYPE="text/javascript"
+	SRC="http://harsha/jsmodule/lk/wts/wts.js"> </SCRIPT>
+
+<SCRIPT TYPE="text/javascript">
+
+	wts.baseURL("http://harsha/jsmodule");
+	//wts.using("lk.wts.jsui.component.*;");
+	
+	wts.using("lk.wts.util.ArrayList;");
+	wts.using("lk.wts.menu.*;");
+	
+	//<div id='testwizard' style="position: absolute;left: 10px;top:100px"></div>
+	
+</SCRIPT>
+<style>
+.menutable {
+	background-color: #CCCCCC;
+	border-top-width: 3px;
+	border-right-width: 3px;
+	border-bottom-width: 3px;
+	border-left-width: 3px;
+	border-top-style: double;
+	border-right-style: outset;
+	border-bottom-style: outset;
+	border-left-style: double;
+	border-top-color: #999999;
+	border-right-color: #999999;
+	border-bottom-color: #999999;
+	border-left-color: #999999;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 14px;
+}
+.menucell {
+	background-color: #CCCCCC;
+	padding-right: 5px;
+	padding-left: 5px;
+	color: #000000;
+	cursor: auto;
+}
+.menucellover {
+	padding-right: 5px;
+	padding-left: 5px;
+	background-color: #003366;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+.menucellheader {
+	background-color: #660000;
+	color: #999999;
+	font-weight: bold;
+	padding: 3px;
+}
+</style>
+</HEAD>
+
+<BODY ONLOAD="test();">
+    <div  id='h' style="position: relative;left: 10px;top:100px">Test</div>
+</BODY>
+
+</HTML>
